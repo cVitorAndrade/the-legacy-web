@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - pnpm_store:/home/appuser/.local/share/pnpm/store
+
+volumes:
+  pnpm_store:

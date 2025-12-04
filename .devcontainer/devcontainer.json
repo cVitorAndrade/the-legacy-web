@@ -1,0 +1,33 @@
+{
+  "name": "Next.js App (Dev Container)",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+
+  "remoteUser": "appuser",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "prisma.prisma",
+        "bradlc.vscode-tailwindcss",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "pnpm install"
+}
